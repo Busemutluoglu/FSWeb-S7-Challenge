@@ -41,7 +41,7 @@ Bitmiş proje aşağıdaki gereklilikleri içermelidir:
 - [*] Pizza boyutunun seçilebileceği "size-dropdown" id'li bir dropdown
 - [*] Malzemeler için bir checklist(checkbox) - en az 4 adet (ipucu: name attributeları farklı olsun!)
 - [*] Özel seçimler için bir text input "special-text" id'li
-- [ ] "order-button" id'li bir "Siparişlere Ekle" butonu. Bu buton tıklandığında form gönderilerek girilen bilgileri içerecek bir veritabanı kaydı oluşturulacak
+- [*] "order-button" id'li bir "Siparişlere Ekle" butonu. Bu buton tıklandığında form gönderilerek girilen bilgileri içerecek bir veritabanı kaydı oluşturulacak
 
 Veri şu şekilde olmalı
 

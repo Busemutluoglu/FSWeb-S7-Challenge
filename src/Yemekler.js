@@ -3,6 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Form from "./Form";
 import logo from "./Pizza.png";
+import axios from "axios";
 
 const Sc_nav = styled.nav`
   display: flex;
@@ -45,7 +46,12 @@ export default function Yemekler() {
     {
       isim: "",
       boyut: "",
-      malzeme: [],
+      malzeme1: false,
+      malzeme2: false,
+      malzeme3: false,
+      malzeme4: false,
+      malzeme5: false,
+      malzeme6: false,
       özel: "",
     },
   ]);
@@ -55,6 +61,7 @@ export default function Yemekler() {
     setSiparis(yenisiparis);
   }
   console.log(siparis);
+
   return (
     <div>
       <Sc_nav id="order-pizza">
