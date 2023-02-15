@@ -79,7 +79,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>160.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>
@@ -95,7 +95,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>200.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>
@@ -111,7 +111,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>60.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>
@@ -127,7 +127,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>99.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>
@@ -143,7 +143,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>160.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>
@@ -159,7 +159,7 @@ export default function YanUrunler() {
             </h6>
           </div>
           <Sc_prize_info>
-            <p>46.90 TL</p>
+            <p>99.90 TL</p>
             <Sc_button>Sipariş Ver</Sc_button>
           </Sc_prize_info>
         </Sc_product_info>

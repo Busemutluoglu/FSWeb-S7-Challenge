@@ -242,8 +242,6 @@ export default function Form(props) {
                   />
                   <Sc_label htmlFor="jambon">Jambon</Sc_label>
                 </Sc_malzeme>
-              </div>
-              <div className="malzeme">
                 <Sc_malzeme>
                   <Sc_input
                     onChange={handleChange}
@@ -255,8 +253,6 @@ export default function Form(props) {
                   />
                   <Sc_label htmlFor="sosis"> Sosis </Sc_label>
                 </Sc_malzeme>
-              </div>
-              <div className="malzeme">
                 <Sc_malzeme>
                   <Sc_input
                     onChange={handleChange}
@@ -283,8 +279,6 @@ export default function Form(props) {
 
                   <Sc_label htmlFor="PizzaSos"> Pizza Sosu </Sc_label>
                 </Sc_malzeme>
-              </div>
-              <div className="malzeme">
                 <Sc_malzeme>
                   <Sc_input
                     onChange={handleChange}
@@ -296,10 +290,7 @@ export default function Form(props) {
                   />
 
                   <Sc_label htmlFor="SiyahZeytin"> Siyah Zeytin </Sc_label>
-                </Sc_malzeme>
-              </div>
-              <div className="malzeme">
-                {" "}
+                </Sc_malzeme>{" "}
                 <Sc_malzeme>
                   <Sc_input
                     onChange={handleChange}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Yemekler from "./Yemekler";
-import * as Yup from "yup";
 
 const Sc_h1 = styled.h1`
   font-family: fantasy;
@@ -23,6 +22,7 @@ const Sc_header = styled.header`
 
   h3 {
     color: antiquewhite;
+    text-shadow: 3px 1px 0px #95d3ed;
   }
   img {
     width: 3.5%;
@@ -40,10 +40,10 @@ const App = () => {
           <h3>TY</h3>
           <Sc_h1>Teknolojik Yemekler</Sc_h1>
         </Sc_header>
-        <main>
-          <Yemekler />
-        </main>
       </div>
+      <main>
+        <Yemekler />
+      </main>
     </>
   );
 };
