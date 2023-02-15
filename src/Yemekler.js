@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Form from "./Form";
-import logo from "./Pizza.png";
+import logo from "./hede.jpg";
 import axios from "axios";
+import YanUrunler from "./YanUrunler";
+import Button from "./Button";
 
 const Sc_nav = styled.nav`
   display: flex;
@@ -14,15 +16,20 @@ const Sc_nav = styled.nav`
   margin-top: 22px;
 
   a {
-    border-radius: 10px;
-    border: 0px solid;
+    border-radius: 6px;
+    border: 2px solid darkgray;
     padding: 8px 15px;
     background-color: silver;
     &:hover {
       background-color: skyblue;
+      border: 2px solid black;
     }
     &:hover {
-      font-family: fantasy;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-weight: bolder;
+      font-size: 1.1rem;
+      padding: 12px 15px;
     }
     text-decoration: none;
     color: antiquewhite;
@@ -35,10 +42,24 @@ const Sc_nav = styled.nav`
 `;
 const Sc_h2 = styled.h2`
   color: skyblue;
-  padding: 8px;
+  margin-top: auto;
+  padding: 10px;
   border-radius: 10px;
   background-color: #fffafa;
   text-align: center;
+  &:hover {
+    color: black;
+  }
+`;
+
+const Sc_div = styled.div`
+  background-image: url(${logo});
+  height: 90vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 `;
 
 export default function Yemekler() {
@@ -73,7 +94,7 @@ export default function Yemekler() {
         </p>
 
         <p>
-          <Link to="/Hakkinda">Hakkında</Link>
+          <Link to="/Hakkinda">Yan Ürünler</Link>
         </p>
       </Sc_nav>
 
@@ -97,9 +118,11 @@ export default function Yemekler() {
     return (
       <div>
         <Sc_h2>AnaSayfa</Sc_h2>
-        <main>
-          <img src={logo} />
-        </main>
+        <Sc_div>
+          <div>
+            <Button />
+          </div>
+        </Sc_div>
       </div>
     );
   }
@@ -116,6 +139,13 @@ export default function Yemekler() {
   }
 
   function Hakkinda() {
-    return <Sc_h2>Hakkinda</Sc_h2>;
+    return (
+      <div>
+        <Sc_h2>Yan Ürünler</Sc_h2>
+        <div>
+          <YanUrunler />
+        </div>
+      </div>
+    );
   }
 }

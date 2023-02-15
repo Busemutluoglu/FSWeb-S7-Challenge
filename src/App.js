@@ -9,6 +9,11 @@ const Sc_h1 = styled.h1`
   margin: 50px;
   font-size: 40px;
   margin-right: 50px;
+  text-shadow: 3px 5px 4px #4b4bb7;
+
+  &:hover {
+    color: white;
+  }
 `;
 const Sc_header = styled.header`
   display: flex;
