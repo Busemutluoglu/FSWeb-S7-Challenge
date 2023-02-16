@@ -16,6 +16,7 @@ const Sc_product_piece_container = styled.div`
   width: 450px;
   border-radius: 9px;
   background-color: #fffafa;
+  opacity: 1;
   overflow: hidden;
   margin-left: 9px;
   margin-right: 9px;

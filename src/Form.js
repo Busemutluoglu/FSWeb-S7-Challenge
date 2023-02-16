@@ -1,16 +1,20 @@
 import React from "react";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
 const Sc_fieldset = styled.fieldset`
   /*  padding: 20px; */
   background-color: #fffafa;
+  opacity: 0.9;
   border-style: solid;
   border-radius: 8px;
   margin: 20px 400px 10px;
   border-color: grey;
+
+  div {
+  }
 
   span {
     padding: 0 20px;
@@ -50,6 +54,7 @@ const Sc_input3 = styled.input`
   border-radius: 4px;
   width: 340px;
   height: 25px;
+  display: 1;
 `;
 
 const Sc_select = styled.select`
@@ -102,16 +107,9 @@ const Sc_div = styled.div`
 `;
 const formSema = Yup.object().shape({
   isim: Yup.string()
-    .min(2, "*İsim en az 2 karakter olmalıdır")
+    .min(3, "*En az 3 karakter")
+    .max(15, "En fazla 15 karakter")
     .required("*Bu alan gereklidir"),
-  boyut: Yup.string().required("*Bu alan zorunludur"),
-  malzeme1: Yup.bool(),
-  malzeme2: Yup.bool(),
-  malzeme3: Yup.bool(),
-  malzeme4: Yup.bool(),
-  malzeme5: Yup.bool(),
-  malzeme6: Yup.bool(),
-  ozelistek: Yup.string(),
 });
 
 export default function Form(props) {
@@ -139,6 +137,11 @@ export default function Form(props) {
     malzeme6: false,
     özel: "",
   });
+
+  const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
+  useEffect(() => {
+    formSema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
+  }, [form]);
 
   function hatalariKontrolEt(name, value) {
     Yup.reach(formSema, name)
@@ -194,15 +197,17 @@ export default function Form(props) {
     <div>
       <form onSubmit={handleSubmit} id="pizza-form">
         <Sc_fieldset>
-          <Sc_label htmlFor="name-input">İsim Soyisim : </Sc_label>
-          <Sc_input3
-            onChange={handleChange}
-            value={form.name}
-            id="name-input"
-            cy="input"
-            name="isim"
-            type="text"
-          />
+          <div>
+            <Sc_label htmlFor="name-input">İsim Soyisim : </Sc_label>
+            <Sc_input3
+              onChange={handleChange}
+              value={form.name}
+              id="name-input"
+              cy="input"
+              name="isim"
+              type="text"
+            />
+          </div>
           <span style={{ color: "red", fontSize: 12 }}>{formError.isim}</span>
           <div>
             <Sc_label
@@ -218,7 +223,7 @@ export default function Form(props) {
               <option>Küçük</option>
             </Sc_select>
           </div>
-          <span style={{ color: "red", fontSize: 12 }}>{formError.isim}</span>
+          <span style={{ color: "red", fontSize: 12 }}>{formError.boyut}</span>
           <div>
             <p>
               <Sc_label>Malzeme Seçimi :</Sc_label>{" "}
@@ -311,7 +316,10 @@ export default function Form(props) {
               />
             </Sc_label>
             <div>
-              <Sc_button id="order-button" type="submit">
+              <Sc_button
+                disabled={buttonDisabledMi}
+                id="order-button"
+                type="submit">
                 Siparişlere Ekle
               </Sc_button>
             </div>

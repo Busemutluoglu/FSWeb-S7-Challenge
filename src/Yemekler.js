@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Form from "./Form";
-import logo from "./hede.jpg";
-import axios from "axios";
+import logo from "./pizza/black2.jpeg";
 import YanUrunler from "./YanUrunler";
 import Button from "./Button";
+import anim from "./pizza/anim.jpeg";
 
 const Sc_nav = styled.nav`
   display: flex;
+  margin-left: 2px;
   justify-content: flex-start;
   font-size: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -39,6 +40,11 @@ const Sc_nav = styled.nav`
       color: black;
     }
   }
+`;
+const Sc_div2 = styled.div`
+  background-image: url(${anim});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 const Sc_h2 = styled.h2`
   color: skyblue;
@@ -131,9 +137,9 @@ export default function Yemekler() {
     return (
       <div>
         <Sc_h2>Sipariş Formu</Sc_h2>
-        <div>
+        <Sc_div2>
           <Form handleSubmitCallBack={siparisEkle} />
-        </div>
+        </Sc_div2>
       </div>
     );
   }

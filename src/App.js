@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Yemekler from "./Yemekler";
+import pic from "./pizza/black.jpeg";
 
 const Sc_h1 = styled.h1`
   font-family: fantasy;
@@ -19,6 +20,10 @@ const Sc_header = styled.header`
   justify-content: space-between;
   background-color: black;
   opacity: 0.9;
+  background-image: url(${pic});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
 
   h3 {
     color: antiquewhite;
