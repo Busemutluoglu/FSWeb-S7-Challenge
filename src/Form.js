@@ -1,17 +1,22 @@
 import React from "react";
 import * as Yup from "yup";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
 const Sc_fieldset = styled.fieldset`
-  margin-bottom: 10px;
-  padding: 70px;
+  /*  padding: 20px; */
   background-color: #fffafa;
   border-style: solid;
   border-radius: 8px;
+  margin: 20px 400px 10px;
   border-color: grey;
-  margin: auto 400px;
+
+  span {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
 `;
 const Sc_label = styled.label`
   margin-bottom: 30px;
@@ -31,38 +36,27 @@ const Sc_input = styled.input`
   border-radius: 8px;
   width: 15px;
 `;
-const Sc_input2 = styled.input`
+const Sc_textarea = styled.textarea`
   width: 500px;
-  border-color: grey;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  margin-left: 15px;
+  border: 2px solid gray;
+  margin: 20px auto 10px 15px;
   height: 80px;
   border-radius: 8px;
 `;
 const Sc_input3 = styled.input`
-  padding: 4px;
   border-color: grey;
-  margin-bottom: 30px;
-  height: 17px;
+  margin: 40px 0;
+  /*  padding: 4px 100px; */
   border-radius: 4px;
-  width: 338px;
-  margin-left: 7px;
+  width: 340px;
+  height: 25px;
 `;
 
-const Sc_option = styled.option`
-  height: 20px;
-  border-radius: 8px;
-  padding: 10px;
-
-  border-color: black;
-  margin-bottom: 10px;
-`;
 const Sc_select = styled.select`
   border-radius: 3px;
   margin-bottom: 30px;
   padding: 4px 100px 4px 0;
-  width: 350px;
+  width: 346px;
   border: 2px solid black;
   background-color: white;
 `;
@@ -74,26 +68,26 @@ const Sc_malzeme = styled.p`
 const Sc_button = styled.button`
   border-radius: 8px;
   border: 2px solid darkgray;
-  padding: 20px 15px;
-  background-color: silver;
-  margin-top: 60px;
+  padding: 20px 20px;
+  background-color: black;
+  margin-top: 40px auto 20px;
   font-size: 1.2rem;
-  font-weight: bolder;
   margin-left: 350px;
 
   &:hover {
-    background-color: skyblue;
-    border-color: darkblue;
+    background-color: white;
+    border-color: black;
   }
   &:hover {
     font-family: fantasy;
+    font-size: 1rem;
   }
   text-decoration: none;
   color: antiquewhite;
   margin-right: 2px;
   color: antiquewhite;
   &:hover {
-    color: darkblue;
+    color: black;
   }
 `;
 
@@ -108,9 +102,9 @@ const Sc_div = styled.div`
 `;
 const formSema = Yup.object().shape({
   isim: Yup.string()
-    .min(2, "İsim en az 2 karakter olmalıdır")
-    .required("Bu alan gereklidir"),
-  boyut: Yup.string().required("Bu alan zorunludur"),
+    .min(2, "*İsim en az 2 karakter olmalıdır")
+    .required("*Bu alan gereklidir"),
+  boyut: Yup.string().required("*Bu alan zorunludur"),
   malzeme1: Yup.bool(),
   malzeme2: Yup.bool(),
   malzeme3: Yup.bool(),
@@ -200,7 +194,7 @@ export default function Form(props) {
     <div>
       <form onSubmit={handleSubmit} id="pizza-form">
         <Sc_fieldset>
-          <Sc_label htmlFor="name-input">İsim Soyisim: </Sc_label>
+          <Sc_label htmlFor="name-input">İsim Soyisim : </Sc_label>
           <Sc_input3
             onChange={handleChange}
             value={form.name}
@@ -218,10 +212,10 @@ export default function Form(props) {
               htmlFor="pizzasize">
               Pizza Boyutu :{" "}
             </Sc_label>
-            <Sc_select onChange={handleChange} name="boyut" id="dropdown">
-              <Sc_option>Büyük</Sc_option>
-              <Sc_option>Orta</Sc_option>
-              <Sc_option>Küçük</Sc_option>
+            <Sc_select onChange={handleChange} name="boyut" id="pizzasize">
+              <option>Büyük</option>
+              <option>Orta</option>
+              <option>Küçük</option>
             </Sc_select>
           </div>
           <span style={{ color: "red", fontSize: 12 }}>{formError.isim}</span>
@@ -308,11 +302,10 @@ export default function Form(props) {
           </div>
           <div>
             <Sc_label htmlFor="ozelistek">
-              Özel Seçim :
-              <Sc_input2
+              Özel Talep :
+              <Sc_textarea
                 onChange={handleChange}
                 value={form.value}
-                type="text"
                 name="ozelistek"
                 id="special-text"
               />
