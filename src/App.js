@@ -17,7 +17,7 @@ const Sc_h1 = styled.h1`
 `;
 const Sc_header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   background-color: black;
   opacity: 0.9;
   background-image: url(${pic});
@@ -41,8 +41,6 @@ const App = () => {
     <>
       <div>
         <Sc_header>
-          <img src="./logo192.png" />
-          <h3>TY</h3>
           <Sc_h1>Teknolojik Yemekler</Sc_h1>
         </Sc_header>
       </div>
